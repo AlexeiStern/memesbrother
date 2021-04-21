@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Meme Creator</title>
+</head>
+
+<body onload="init()">
+    <h1>Memes brother</h1>
+    <div class="grid-container">
+        <div class="memes"></div>
+    </div>
+
+
+    <div class="meme-editor">
+        <!-- <div class="meme-line"></div> -->
+        <div class="canvas-container">
+            <canvas id="my-canvas" height="500" width="500"></canvas>
+            
+        </div class="control-box">
+        <input id="memeTxt" placeholder="add your meme here...">
+        <button onclick="switchText()">↕️</button>
+        <button onclick="changeUp()">⬇️</button>
+        <button onclick="changeDown()">⬆️</button>
+        <button onclick="addSize()">A+</button>
+        <button onclick="deSize()">A-</button>
+        <button onclick="rmvLine()">Remove Line</button>
+        <label for="fonts">Choose font:</label>
+        <select id="fonts" name="fonts" onchange="changeFont(this)">
+            <option value="Impact">Impact</option>
+            <option value="Arial">Arial</option>
+            <option value="David">David</option>
+            <option value="Verdana">Verdana</option>
+        </select> 
+        
+        <label for="align">Text align:</label>
+        <select id="align" name="align" onchange="changeAlign(this)">
+            <option value="center">Center</option>
+            <option value="right">Left</option>
+            <option value="left">Right</option>
+        </select> 
+        <div id="createPNGButton">
+            <button onclick="downloadMeme()">Save as Image</button>        
+        </div>
+        
+    </div>
+</div>
+        
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
