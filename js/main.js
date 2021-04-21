@@ -14,11 +14,11 @@ var gFont = 'Impact';
 
 function init() {
     var elMemes = document.querySelector(".memes");
-    gCanvas = document.getElementById('my-canvas')
-    gCtx = gCanvas.getContext('2d')
+    gCanvas = document.getElementById('my-canvas');
+    gCtx = gCanvas.getContext('2d');
     var strHTMLs = '';
     for (var i = 1; i < 19; i++) {
-        strHTMLs += `<img src="./meme-imgs (square)/${i}.jpg" onclick="imgSelected(this)">`
+        strHTMLs += `<img src="./meme-imgs (square)/${i}.jpg" onclick="imgSelected(this)">`;
     }
     elMemes.innerHTML = strHTMLs;
 
@@ -104,15 +104,13 @@ function changeFont(font) {
 
 function changeAlign(align) {
     gAlign = align.value;
-    renderCanvas()
+    renderCanvas();
 }
 
-
-function downloadMeme()
-{
+function downloadMeme() {
     var image = gCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-  var link = document.createElement('a');
-  link.download = "my-image.png";
-  link.href = image;
-  link.click();
+    var link = document.createElement('a');
+    link.download = "my-image.png";
+    link.href = image;
+    link.click();
 }

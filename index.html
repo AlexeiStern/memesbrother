@@ -13,18 +13,16 @@
     <div class="grid-container">
         <div class="memes"></div>
     </div>
-
-
     <div class="meme-editor">
         <!-- <div class="meme-line"></div> -->
         <div class="canvas-container">
             <canvas id="my-canvas" height="500" width="500"></canvas>
-            
+
         </div class="control-box">
         <input id="memeTxt" placeholder="add your meme here...">
-        <button onclick="switchText()">↕️</button>
-        <button onclick="changeUp()">⬇️</button>
-        <button onclick="changeDown()">⬆️</button>
+        <button onclick="switchText()">🔄</button>
+        <button onclick="changeUp()">🔽</button>
+        <button onclick="changeDown()">🔼</button>
         <button onclick="addSize()">A+</button>
         <button onclick="deSize()">A-</button>
         <button onclick="rmvLine()">Remove Line</button>
@@ -34,21 +32,19 @@
             <option value="Arial">Arial</option>
             <option value="David">David</option>
             <option value="Verdana">Verdana</option>
-        </select> 
-        
+        </select>
         <label for="align">Text align:</label>
         <select id="align" name="align" onchange="changeAlign(this)">
             <option value="center">Center</option>
             <option value="right">Left</option>
             <option value="left">Right</option>
-        </select> 
+        </select>
         <div id="createPNGButton">
-            <button onclick="downloadMeme()">Save as Image</button>        
+            <button onclick="downloadMeme()">Save as Image</button>
         </div>
-        
     </div>
-</div>
-        
+    </div>
+
 
 
     <script src="./js/main.js"></script>
