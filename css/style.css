@@ -38,6 +38,8 @@ button {
     font-weight: 600;
     font-family: cursive;
     min-width: 48px;
+    border-radius: 50%;
+    background-color: rgb(255, 204, 0);
 }
 
 nav {
@@ -49,8 +51,9 @@ nav img {
     top: 0px;
 }
 
-option {
+input,select {
     font-family: cursive;
+    background-color: rgb(255, 204, 0);
 }
 
 .grid-container {
@@ -62,4 +65,5 @@ option {
 .grid-child-line {
     text-align: right;
     font-size: 2rem;
+    color:rgb(255, 204, 0);
 }
