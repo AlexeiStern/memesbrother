@@ -1,0 +1,38 @@
+button {
+    font-weight: 600;
+    font-family: cursive;
+    min-width: 48px;
+    min-height: 48px;
+}
+
+img {
+    width: 30vw;
+}
+
+.meme-editor img {
+    width: 100;
+}
+
+
+
+button {
+    font-size: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+.navigation>* {
+    font-size: 1.25rem;
+}
+
+nav img {
+    left: 25px;
+    height: 60px;
+    width: 67px;
+}
+
+.meme-txt {
+    margin-top: 50px;
+}

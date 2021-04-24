@@ -11,6 +11,7 @@ var gMeme;
 var gFontSize = 40;
 var gAlign = 'center';
 var gFont = 'Impact';
+var gColor = '#FFFFFF'
 
 function init() {
     var elMemes = document.querySelector(".memes");
@@ -26,7 +27,9 @@ function init() {
 
 function imgSelected(img) {
     gCurrMemes.image = img;
-    window.scrollTo(0, document.body.scrollHeight);
+    let elMeme= document.querySelector('.meme-editor');
+    elMeme.style.display= 'block';
+    window.scrollTo(0, 0);
     gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
 
 }
@@ -34,9 +37,9 @@ function imgSelected(img) {
 function renderCanvas() {
     gCtx.clearRect(0, 0, 500, 500);
     gCtx.drawImage(gCurrMemes.image, 0, 0, gCanvas.width, gCanvas.height);
-    drawText(gCurrMemes.upper, 250, 50, gFont, gFontSize, 'white');
-    drawText(gCurrMemes.middle, 250, 250, gFont, gFontSize, 'white');
-    drawText(gCurrMemes.lower, 250, 450, gFont, gFontSize, 'white');
+    drawText(gCurrMemes.upper, 250, 50, gFont, gFontSize, gColor);
+    drawText(gCurrMemes.middle, 250, 250, gFont, gFontSize, gColor);
+    drawText(gCurrMemes.lower, 250, 450, gFont, gFontSize, gColor);
 
 }
 
@@ -70,11 +73,19 @@ function switchText() {
 }
 
 function changeUp() {
-    if (gFocusedLine < 450) gFocusedLine += 200;
+    if (gFocusedLine < 450) {
+        gFocusedLine += 200;
+        var elLine= document.querySelector('.grid-child-line');
+        elLine.style.marginTop=gFocusedLine-50+'px';
+    }
 }
 
 function changeDown() {
-    if (gFocusedLine > 50) gFocusedLine -= 200;
+    if (gFocusedLine > 50){
+    gFocusedLine -= 200;
+    var elLine= document.querySelector('.grid-child-line');
+    elLine.style.marginTop=gFocusedLine-50+'px';
+    }
 }
 
 function addSize() {
@@ -94,7 +105,6 @@ function rmvLine() {
         case 450: gCurrMemes.lower = ''; break;
     }
     renderCanvas();
-
 }
 
 function changeFont(font) {
@@ -113,4 +123,21 @@ function downloadMeme() {
     link.download = "my-image.png";
     link.href = image;
     link.click();
+}
+
+function saveToStorage(){
+    localStorage.setItem("savedMeme",gCanvas.toDataURL());
+}
+
+function loadFromStorage(){
+var img = new Image();
+var dataURL = localStorage.getItem("savedMeme")
+img.src= dataURL;
+console.log(img)
+}
+
+function changeColor(selCol){
+gColor=selCol.value;
+renderCanvas();
+
 }

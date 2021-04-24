@@ -1,10 +1,21 @@
-h1 {
-    font-family: cursive;
-}
+@import "mobile.css";
+@import "desktop.css" screen and (min-width: 750px);
 
 body {
     background-color: rgb(43, 42, 42);
     text-align: center;
+}
+
+h1 {
+    font-family: cursive;
+    background-color: rgb(255, 204, 0);
+    width: 90vw;
+    margin: auto;
+    height: 79px;
+}
+
+.memes img:hover {
+    cursor: pointer;
 }
 
 html {
@@ -17,14 +28,38 @@ canvas {
 }
 
 .meme-editor {
-    background-color: gray;
+    background-color: rgb(105, 82, 63);
+    font-family: cursive;
+    width: 90vw;
+    margin: auto;
+}
+
+button {
+    font-weight: 600;
+    font-family: cursive;
+    min-width: 48px;
+}
+
+nav {
+    margin-bottom: 2px;
+}
+
+nav img {
+    position: absolute;
+    top: 0px;
+}
+
+option {
     font-family: cursive;
 }
-button{
-font-weight: 600;
-font-family: cursive;
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    grid-gap: 0px;
 }
-/* .meme-line {
-    float: left;
-    margin-left: 50px;
-} */
+
+.grid-child-line {
+    text-align: right;
+    font-size: 2rem;
+}

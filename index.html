@@ -9,41 +9,70 @@
 </head>
 
 <body onload="init()">
-    <h1>Memes brother</h1>
-    <div class="grid-container">
-        <div class="memes"></div>
-    </div>
-    <div class="meme-editor">
-        <!-- <div class="meme-line"></div> -->
+    <nav>
+        <img src="./img/doge2.png" alt="logo">
+        <h1>Memes brother <br>
+            <div class="navigation">
+                <span class="gallery">Gallery</span>|<span class="savedMemes">Saved memes</span>|<span class="about">About</span>
+            </div>
+        </h1>
+      
+    </nav>
+    
+    
+    <div class="meme-editor" hidden>
+        
         <div class="canvas-container">
-            <canvas id="my-canvas" height="500" width="500"></canvas>
+          
+            <div class="grid-container">
 
-        </div class="control-box">
-        <input id="memeTxt" placeholder="add your meme here...">
-        <button onclick="switchText()">🔄</button>
-        <button onclick="changeUp()">🔽</button>
-        <button onclick="changeDown()">🔼</button>
-        <button onclick="addSize()">A+</button>
-        <button onclick="deSize()">A-</button>
-        <button onclick="rmvLine()">Remove Line</button>
-        <label for="fonts">Choose font:</label>
-        <select id="fonts" name="fonts" onchange="changeFont(this)">
-            <option value="Impact">Impact</option>
-            <option value="Arial">Arial</option>
-            <option value="David">David</option>
-            <option value="Verdana">Verdana</option>
-        </select>
-        <label for="align">Text align:</label>
-        <select id="align" name="align" onchange="changeAlign(this)">
-            <option value="center">Center</option>
-            <option value="right">Left</option>
-            <option value="left">Right</option>
-        </select>
-        <div id="createPNGButton">
-            <button onclick="downloadMeme()">Save as Image</button>
-        </div>
-    </div>
-    </div>
+                
+                <div class="grid-child-line">
+>>>>>>>
+                </div>
+                <div class="grid-child-purple">
+                    <canvas id="my-canvas" height="500" width="500"></canvas>
+                </div>
+                
+              
+            </div>
+            
+            
+          
+</div class="control-box">
+<input id="meme-txt" placeholder="add your meme here...">
+<button onclick="switchText()">🔄</button>
+<button onclick="changeUp()">🔽</button>
+<button onclick="changeDown()">🔼</button>
+<button onclick="addSize()">A+</button>
+<button onclick="deSize()">A-</button>
+<button onclick="rmvLine()">Remove Line</button>
+<label for="fonts">Choose font:</label>
+<select id="fonts" name="fonts" onchange="changeFont(this)">
+    <option value="Impact">Impact</option>
+    <option value="Arial">Arial</option>
+    <option value="David">David</option>
+    <option value="Verdana">Verdana</option>
+</select>
+<label for="align">Text align:</label>
+<select id="align" name="align" onchange="changeAlign(this)">
+    <option value="center">Center</option>
+    <option value="right">Left</option>
+    <option value="left">Right</option>
+</select>
+<div>
+    <input type="color" id="txt" name="txt"
+    value="#FFFFFF" onchange="changeColor(this)">
+    <label for="txt">Text Color</label>
+</div>
+<div id="createPNGButton">
+    <button onclick="downloadMeme()">Download Image</button> <button onclick="saveToStorage()">Save to Storage</button>
+</div>
+
+
+</div>
+    <div class="memes"></div>
+</div>
 
 
 
